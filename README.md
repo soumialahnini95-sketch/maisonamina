@@ -1,379 +1,352 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Maison Amina - Boulangerie & Pâtisserie</title>
-  <style>
-    /* Reset */
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #f9f7f1;
-      color: #333;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      background: #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      z-index: 1000;
-    }
-    nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      padding: 15px 20px;
-      justify-content: space-between;
-    }
-    
-    nav.logo-img{
-      height: 60px;
-      width: auto;
-      flex-shrink: 0;
-    }
-    
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-      flex: 1;
-      justify-content: center;
-    }
-    nav ul li a {
-      font-weight: 600;
-      font-size: 1rem;
-      color: #555;
-      padding: 6px 10px;
-      border-radius: 4px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    nav ul li a:hover,
-    nav ul li a.active {
-      background-color: #d2691e;
-      color: #fff;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cutie Corner - Accessoires Féminins de Haute Qualité, Casablanca</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Icônes Font Awesome pour féminité -->
+    <style>
+        /* Styles généraux avec thème féminin et professionnel */
+        body {
+            font-family: 'Georgia', serif; /* Police élégante et féminine */
+            line-height: 1.8;
+            color: #4a4a4a;
+            background-color: #fefefe;
+        }
 
-    /* Hero Section */
-    .hero {
-      margin-top: 65px; /* header height */
-      position: relative;
-      height: 80vh;
-      background: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      text-align: center;
-      padding: 0 20px;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(139, 69, 19, 0.6);
-      z-index: 0;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 700px;
-    }
-    .hero-content h1 {
-      font-size: 3rem;
-      font-family: 'Georgia', serif;
-      margin-bottom: 15px;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
-    }
-    .hero-content p {
-      font-size: 1.2rem;
-      margin-bottom: 25px;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-    }
-    .btn-primary {
-      background-color: #d2691e;
-      color: #fff;
-      padding: 12px 30px;
-      font-weight: 600;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      font-size: 1.1rem;
-      transition: background-color 0.3s ease;
-      box-shadow: 0 4px 10px rgba(210,105,30,0.4);
-    }
-    .btn-primary:hover {
-      background-color: #a0521d;
-      box-shadow: 0 6px 15px rgba(160,82,29,0.6);
-    }
+        /* Logo avec touche féminine */
+        .logo {
+            font-weight: bold;
+            color: #e91e63; /* Rose profond pour féminité */
+            font-size: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
 
-    /* Sections */
-    section {
-      max-width: 1100px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-    section h2 {
-      font-family: 'Georgia', serif;
-      font-size: 2.5rem;
-      color: #d2691e;
-      margin-bottom: 20px;
-      border-bottom: 3px solid #d2691e;
-      padding-bottom: 8px;
-      max-width: max-content;
-    }
-    section p, section ul {
-      font-size: 1.1rem;
-      color: #444;
-      max-width: 800px;
-    }
-    section ul {
-      list-style: disc inside;
-      margin-top: 15px;
-    }
+        /* Section Hero avec gradient féminin */
+        .hero {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%); /* Dégradé rose doux */
+            background-size: cover;
+            background-position: center;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255,255,255,0.1);
+        }
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
 
-    /* Galerie */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-      gap: 20px;
-      margin-top: 25px;
-    }
-    .gallery img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    &}
+        /* Cartes de produits avec effets féminins */
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
 
-    /* Formulaire */
-    form {
-      max-width: 600px;
-      background: #fff;
-      padding: 30px 25px;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    }
-    form label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-      color: #5a3e1b;
-    }
-    form input[type="text"],
-    form input[type="email"],
-    form textarea {
-      width: 100%;
-      padding: 12px 15px;
-      margin-bottom: 20px;
-      border: 2px solid #d2691e;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-family: inherit;
-      resize: vertical;
-      transition: border-color 0.3s ease;
-    }
-    form input[type="text"]:focus,
-    form input[type="email"]:focus,
-    form textarea:focus {
-      border-color: #a0521d;
-      outline: none;
-    }
-    form button {
-      background-color: #d2691e;
-      color: #fff;
-      border: none;
-      padding: 14px 30px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      box-shadow: 0 6px 15px rgba(210,105,30,0.4);
-    }
-    form button:hover {
-      background-color: #a0521d;
-      box-shadow: 0 8px 20px rgba(160,82,29,0.6);
-    }
+        /* Boutons avec style féminin */
+        .btn-primary {
+            background: linear-gradient(45deg, #e91e63, #f06292);
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(45deg, #c2185b, #e91e63);
+            transform: scale(1.05);
+        }
 
-    /* Newsletter */
-    .newsletter {
-      background: #d2691e;
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-      border-radius: 12px;
-      max-width: 600px;
-      margin: 0 auto 60px;
-      box-shadow: 0 6px 20px rgba(210,105,30,0.4);
-    }
-    .newsletter h3 {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-      font-family: 'Georgia', serif;
-    }
-    .newsletter form {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .newsletter input[type="email"] {
-      flex: 1 1 250px;
-      padding: 12px 15px;
-      border-radius: 30px;
-      border: none;
-      font-size: 1rem;
-      font-family: inherit;
-    }
-    .newsletter button {
-      flex: 0 0 auto;
-      padding: 12px 30px;
-      border-radius: 30px;
-      border: none;
-      background: #fff;
-      color: #d2691e;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    .newsletter button:hover {
-      background-color: #a0521d;
-      color: #fff;
-    }
+        /* Section À propos avec message féminin */
+        #about {
+            background: #fff;
+            padding: 60px 0;
+        }
+        #about h3 {
+            color: #e91e63;
+            font-weight: bold;
+        }
 
-    /* Footer */
-    footer {
-      background: #3e2f1c;
-      color: #f0e6d2;
-      text-align: center;
-      padding: 20px 10px;
-      font-size: 0.9rem;
-      letter-spacing: 1px;
-    }
+        /* Témoignages pour attractivité */
+        #testimonials {
+            background: #fce4ec;
+            padding: 60px 0;
+        }
+        .testimonial {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .testimonial img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero-content h1 {
-        font-size: 2.2rem;
-      }
-      .hero-content p {
-        font-size: 1rem;
-      }
-      nav ul {
-        gap: 15px;
-      }
-    }
-    @media (max-width: 480px) {
-      nav {
-        flex-direction: column;
-        gap: 10px;
-      }
-      nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .newsletter form {
-        flex-direction: column;
-      }
-      .newsletter input[type="email"],
-      .newsletter button {
-        width: 100%;
-        flex: none;
-      }
-    }
-  </style>
+        /* Newsletter */
+        #newsletter {
+            background: #e91e63;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        /* Footer professionnel */
+        footer {
+            background: #333;
+            color: white;
+            padding: 20px 0;
+        }
+
+        /* Animations subtiles */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Responsivité */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            .nav {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header avec navigation -->
+    <header class="bg-white py-3 shadow-sm">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <h1 class="logo"><i class="fas fa-heart"></i> Cutie Corner</h1> <!-- Icône cœur pour féminité -->
+                </div>
+                <div class="col-md-9">
+                    <nav>
+                        
+                        <ul class="nav justify-content-end">
+                            <li class="nav-item"><a class="nav-link" href="#home"><i class="fas fa-home"></i> Accueil</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#products"><i class="fas fa-gem"></i> Produits</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#about"><i class="fas fa-info-circle"></i> À propos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#testimonials"><i class="fas fa-star"></i> Témoignages</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#cart"><i class="fas fa-shopping-cart"></i> Panier</a></li>
+                        </ul>::``
 
-<header>
-  <nav>
-    <img src="images/logomaisonamina.png"height="auto" width="120" alt="logo maison amina" class="logo-img" />
-    <ul>
-      <li><a href="#hero" class="active">Accueil</a></li>
-      <li><a href="#specialites">Spécialités</a></li>
-      <li><a href="#galerie">Galerie</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#newsletter">Newsletter</a></li>
-    </ul>
-  </nav>
-</header>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<section class="hero" id="hero">
-  <div class="hero-content">
-    <h1>Maison Amina</h1>
-    <p>La boulangerie & pâtisserie traditionnelle de Casablanca, où passion rime avec saveurs.</p>
-    <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contactez-nous</button>
-  </div>
-</section>
+    <!-- Section Hero (accueil) -->
+    <section id="home" class="hero text-white text-center py-5 fade-in">
+        <div class="container">
+            <h2 class="display-4">Élevez Votre Style Féminin avec Cutie Corner</h2>
+            <p class="lead">Bagues, colliers et boucles d'oreilles de haute qualité, conçus pour sublimer votre beauté. Expédiés depuis Casablanca, pour une élégance intemporelle et accessible.</p>
+            <a href="#products" class="btn btn-light btn-lg"><i class="fas fa-arrow-down"></i> Découvrez nos produits</a>
+        </div>
+    </section>
 
-<section id="specialites">
-  <h2>Nos spécialités</h2>
-  <p>Nous vous proposons une large gamme de produits frais et artisanaux, préparés avec soin :</p>
-  <ul>
-    <li>Pains traditionnels marocains cuits au four à bois</li>
-    <li>Viennoiseries françaises feuilletées et gourmandes</li>
-    <li>Pâtisseries marocaines parfumées à la fleur d'oranger</li>
-    <li>Produits bio et ingrédients locaux sélectionnés</li>
-  </ul>
-</section>
+    <!-- Section Produits -->
+    <section id="products" class="py-5 bg-light">
+        <div class="container">
+            <h3 class="text-center mb-5" style="color: #e91e63;">Nos Accessoires Féminins</h3>
+            <div class="row">
+                <!-- Produit 1 : Bagues -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="bague1.jpg" class="card-img-top" alt="Bague élégante" onerror="this.src='https://via.placeholder.com/300x200?text=Bague+Elegante'">
+                        <div class="card-body">
+                            <h5 class="card-title">Bague en Argent avec Pierre Précieuse</h5>
+                            <p class="card-text">Design délicat et raffiné, parfait pour ajouter une touche de glamour à votre quotidien. Matériau hypoallergénique, durable et ajustable. Idéale pour les occasions spéciales ou le port quotidien, symbolisant l'élégance féminine.</p>
+                            <p class="text-primary font-weight-bold">350 MAD</p>
+                            <a href="#" class="btn btn-primary add-to-cart"><i class="fas fa-cart-plus"></i> Ajouter au panier</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Produit 2 : Colliers -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="collier1.jpg" class="card-img-top" alt="Collier chic" onerror="this.src='https://via.placeholder.com/300x200?text=Collier+Chic'">
+                        <div class="card-body">
+                            <h5 class="card-title">Collier en Or Blanc avec Pendentif</h5>
+                            <p class="card-text">Chaîne fine et pendentif scintillant pour un look sophistiqué. Inspiré par la beauté naturelle des femmes, ce collier met en valeur votre cou avec grâce. Longueur ajustable, facile à porter seul ou en layering.</p>
+                            <p class="text-primary font-weight-bold">500 MAD</p>
+                            <a href="#" class="btn btn-primary add-to-cart"><i class="fas fa-cart-plus"></i> Ajouter au panier</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Produit 3 : Boucles d'oreilles -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="boucles1.jpg" class="card-img-top" alt="Boucles d'oreilles" onerror="this.src='https://via.placeholder.com/300x200?text=Boucles+Ooreilles'">
+                        <div class="card-body">
+                            <h5 class="card-title">Boucles d'Oreilles en Cristal Swarovski</h5>
+                            <p class="card-text">Éclat cristallin pour illuminer votre visage. Design asymétrique moderne, confortable pour un port prolongé. Parfaites pour les soirées ou le bureau, ajoutant une note de féminité et de confiance à votre tenue.</p>
+                            <p class="text-primary font-weight-bold">250 MAD</p>
+                            <a href="#" class="btn btn-primary add-to-cart"><i class="fas fa-cart-plus"></i> Ajouter au panier</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="galerie">
-  <h2>Galerie de nos produits</h2>
-  <div class="gallery">
-    <img src="images/cookies.PNG" alt="cookies" />
-    <img src="images/IMG_6776.JPG" alt="Viennoiseries" />
-    <img src="images/foret.jpg" alt="foret" />
-    <img src="images/praliné.jpg" alt="praliné" />
-    <img src="images/IMG_6770.jpg">
-    <img src="images/IMG_6776.JPG">
-    <img src="images/IMG_6777.JPG">
-  </div>
-</section>
+    <!-- Section À propos avec message féminin -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h3 class="text-center mb-4">À propos de Cutie Corner : Célébrer la Féminité</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Basée à Casablanca, Cutie Corner est dédiée à offrir des bagues, colliers et boucles d'oreilles qui célèbrent la beauté et la force des femmes. Chaque pièce est sélectionnée avec soin pour sa qualité, son élégance et son accessibilité. Notre mission est d'aider les femmes à se sentir confiantes et stylées, en promouvant une mode inclusive et durable.</p>
+                    <p><strong>Pourquoi nous choisir ?</strong> Pièces uniques, livraison rapide et un service personnalisé pour sublimer votre look.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="about-image.jpg" class="img-fluid rounded" alt="Équipe Cutie Corner" onerror="this.src='https://via.placeholder.com/500x300?text=Equipe'">
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="contact">
-  <h2>Contactez-nous</h2>
-  <form onsubmit="event.preventDefault(); alert('Merci pour votre message ! Nous vous répondrons bientôt.'); this.reset();">
-    <label for="name">Nom complet</label>
-    <input type="text" id="name" name="name" placeholder="Votre nom" required />
+    <!-- Section Témoignages pour attractivité -->
+    <section id="testimonials" class="py-5">
+        <div class="container">
+            <h3 class="text-center mb-5" style="color: #e91e63;">Ce que disent nos clientes</h3>
+            <div class="row">
+                <div class="col-md-4 testimonial">
+                    <img src="https://via.placeholder.com/80x80?text=Femme1" alt="Témoignage 1">
+                    <p>"Ces bagues sont magnifiques et confortables. Elles me font sentir spéciale tous les jours !"</p>
+                    <p><strong>- Amina, Casablanca</strong></p>
+                </div>
+                <div class="col-md-4 testimonial">
+                    <img src="https://via.placeholder.com/80x80?text=Femme2" alt="Témoignage 2">
+                    <p>"Le collier est parfait pour mes tenues. Qualité exceptionnelle et livraison rapide."</p>
+                    <p><strong>- Fatima, Rabat</strong></p>
+                </div>
+                <div class="col-md-4 testimonial">
+                    <img src="https://via.placeholder.com/80x80?text=Femme3" alt="Témoignage 3">
+                    <p>"Les boucles d'oreilles ajoutent une touche d'élégance. Merci Cutie Corner !"</p>
+                    <p><strong>- Leila, Marrakech</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <label for="email">Adresse e-mail</label>
-    <input type="email" id="email" name="email" placeholder="Votre e-mail" required />
+    <!-- Section Contact -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h3 class="text-center mb-4" style="color: #e91e63;">Contactez-nous</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name"><i class="fas fa-user"></i> Nom</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message"><i class="fas fa-comment"></i> Message</label>
+                            <textarea class="form-control" id="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Envoyer</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <p><strong><i class="fas fa-map-marker-alt"></i> Adresse :</strong> Casablanca, Maroc</p>
+                    <p><strong><i class="fas fa-envelope"></i> Email :</strong> info@cutiecorner.ma</p>
+                    <p><strong><i class="fas fa-phone"></i> Téléphone :</strong> +212 6XX XXX XXX</p>
+                    <p><strong><i class="fas fa-truck"></i> Livraison :</strong> Gratuite à Casablanca, frais réduits ailleurs. Commandez en ligne pour une élégance livrée à domicile.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <label for="message">Message</label>
-    <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
+    <!-- Newsletter -->
+    <section id="newsletter">
+        <div class="container">
+            <h4>Abonnez-vous à notre newsletter</h4>
+            <p>Recevez des conseils de style, des offres exclusives et des inspirations pour vos looks féminins.</p>
+            <form class="form-inline justify-content-center">
+                <input type="email" class="form-control mr-2" placeholder="Votre email" required>
+                <button type="submit" class="btn btn-light"><i class="fas fa-envelope"></i> S'abonner</button>
+            </form>
+        </div>
+    </section>
 
-    <button type="submit">Envoyer</button>
-  </form>
-</section>
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-3">
+        <div class="container text-center">
+            <p>&copy; 2025 Cutie Corner. Tous droits réservés. | <a href="#" class="text-white">Mentions légales</a> | <a href="#" class="text-white">Politique de confidentialité</a></p>
+            <div class="social-links">
+                <a href="#" class="text-white mx-2"><i class="fab fa-facebook"></i> Facebook</a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i> Twitter</a>
+            </div>
+        </div>
+    </footer>
 
-<section class="newsletter" id="newsletter">
-  <h3>Abonnez-vous à notre newsletter</h3>
-  <form onsubmit="event.preventDefault(); alert('Merci pour votre abonnement !'); this.reset();">
-    <input type="email" placeholder="Votre adresse e-mail" required />
-    <button type="submit">S'abonner</button>
-  </form>
-</section>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Script pour le panier simple et animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    alert('Produit ajouté au panier ! Continuez à célébrer votre féminité.');
+                });
+            });
 
-<footer>
-  &copy; 2024 Maison Amina - Tous droits réservés - Casablanca
-</footer>
+            // Validation du formulaire de contact
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                alert('Message envoyé ! Merci de nous contacter.');
+            });
 
+            // Animation fade-in pour les sections
+            const sections = document.querySelectorAll('section');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            });
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
 </body>
 </html>
